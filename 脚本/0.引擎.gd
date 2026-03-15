@@ -38,7 +38,7 @@ var 时间=preload("res://addons/YgameEngine/脚本/9.时间.gd").new()
 var 字符串:=preload("res://addons/YgameEngine/脚本/10.字符串.gd").new()
 
 ##基于自己理解的东西,节点统称为对象
-var 对象=preload("res://addons/YgameEngine/脚本/11.对象.gd").new()
+var 对象:=preload("res://addons/YgameEngine/脚本/11.对象.gd").new()
 
 ##基于自己理解的东西,节点统称为对象
 var 图片=preload("res://addons/YgameEngine/脚本/16.图片.gd").new()
@@ -251,3 +251,16 @@ class 如果逻辑 :
 # 封装顶层“如果”函数
 func 如果(条件: bool) -> 如果逻辑:
 	return 如果逻辑.new(条件)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

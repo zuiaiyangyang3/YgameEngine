@@ -1,6 +1,6 @@
 extends CanvasLayer
 ##绘制绘制相关
-var 伤害功能=preload("uid://dhkr78momttr0").new()
+var 伤害功能:=preload("uid://dhkr78momttr0").new()
 #注册伤害
 
 ## 伤害绘制(Vector2(300,300),123,"命中","正常"，):

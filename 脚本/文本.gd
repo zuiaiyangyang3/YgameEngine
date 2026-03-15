@@ -2,6 +2,7 @@
 extends Node
 class_name 文本引擎
 ##以下是后期内置的封装函数,可更改
+var 对话界面:Control
 var 对话面板:Panel
 var 文本控件:RichTextLabel
 var 角色名称控件:RichTextLabel
@@ -28,13 +29,21 @@ func c_红色(文本: String) -> String:
 #@onready var 文本控件:RichTextLabel=$"文本内容"
 #@onready var 角色名称控件:RichTextLabel=$"角色名称2"
 #@onready var 菜单控件: VBoxContainer = $菜单
-func 初始化(_对话面板:Panel,_文本控件:RichTextLabel,_角色名称控件:RichTextLabel,_菜单控件: VBoxContainer,_背景控件:Control):
-
+func 初始化(_对话界面:Control,_对话面板:Panel,_文本控件:RichTextLabel,_角色名称控件:RichTextLabel,_菜单控件: VBoxContainer,_背景控件:Control):
+	对话界面=_对话界面
 	对话面板=_对话面板
 	文本控件=_文本控件
 	角色名称控件=_角色名称控件
 	菜单控件=_菜单控件
 	背景控件=_背景控件
+	##按钮 选项0 ,选项项1..到6 一共7个 最大支持
+	_对话界面.gui_input.connect(func(event: InputEvent):
+		if event is InputEventMouseButton:
+			if event.pressed:
+				self.更新文本.emit()
+				引擎.调试.打印("触发")
+		pass
+		)
 	pass
 
 signal 菜单选择
@@ -52,12 +61,8 @@ func 文本(名称,...文本:Array):
 	pass
 
 ##按钮 选项0 ,选项项1..到6 一共7个 最大支持
-func _gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		if event.pressed:
-			self.更新文本.emit()
-				
-	pass
+
+	
 func 隐藏对话():
 	文本控件.hide()
 	角色名称控件.hide()
@@ -148,43 +153,7 @@ func 清():
 	for b in 背景控件.get_children():
 		b.free()
 	#await 清理信号
-
-
-
-
-
-
-
-
-
-#
-#extends 文本引擎
-##用户层,不可更改
-#func _ready() -> void:
-	#初始化($"对话面板",$"文本内容",$"角色名称",$"菜单",$"背景")
-	#开始对话()
-#
-#func 开始对话():
-	#await 清()
-	#await 画("背景","bg")
-	#await 文本("小白","你好","测试:",c_红色("快捷上色"))
-	#await 画("背景","bg2")
-	#await 画("头像标签","头像",对齐.居中)
-	#await 文本("小白","磁")
-	#await 画("头像标签","头像",对齐.全屏)
-	#await 文本("小黑","哇,吓我一跳")
-	#开始2()
-#func 开始2():
-	#
-	#await 文本("小白","开始要选项了")
-	#await 文本("小黑","好的")
-	#await 菜单(
-		#"第一个选项",
-		#"第二个选项",
-	#)
-#func 第一个选项():
-	#await 文本("小白","我知道了")
-	#开始对话() #返回开始
-#func 第二个选项():
-	#await 文本("小黑","我懂了")
-	#开始对话()#返回开始
+func 结束对话():
+	var 面板=引擎.对象.获取父对象(对话界面)
+	面板.queue_free()
+	pass

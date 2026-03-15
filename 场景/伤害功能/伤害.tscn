@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dd4qxl8h27mqj"]
+[gd_scene format=3 uid="uid://dd4qxl8h27mqj"]
 
 [sub_resource type="GDScript" id="1"]
 script/source = "extends Node2D
@@ -144,18 +144,17 @@ _data = {
 &"缩小放大上移动": SubResource("4")
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=758951263]
+layer = 10
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=680524442]
 script = SubResource("1")
 
-[node name="数值" type="Node2D" parent="Node2D"]
+[node name="数值" type="Node2D" parent="Node2D" unique_id=1263425144]
 z_as_relative = false
 y_sort_enabled = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_ei5js")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D" unique_id=1927055867]
+libraries/ = SubResource("AnimationLibrary_ei5js")
 
 [connection signal="animation_finished" from="Node2D/AnimationPlayer" to="Node2D" method="_on_animation_player_animation_finished"]

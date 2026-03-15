@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bfpae87orb2wu"]
+
+[ext_resource type="Script" uid="uid://dwx1ww1kil0uv" path="res://addons/YgameEngine/场景/简易对话示例/node_2d.gd" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://d2oi2um5mxxu7" path="res://addons/YgameEngine/场景/简易对话示例/image/头像.png" id="2_ja2j0"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1809646467]
+layer = 100
+script = ExtResource("1_wtcfe")
+
+[node name="对话" type="Control" parent="." unique_id=384868000]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="背景" type="Control" parent="对话" unique_id=1097980521]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Bg2" type="TextureRect" parent="对话/背景" unique_id=970238063]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -99.0
+offset_bottom = 80.0
+grow_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("2_ja2j0")
+
+[node name="对话面板" type="Panel" parent="对话" unique_id=940318924]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = 923.0
+offset_right = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="文本内容" type="RichTextLabel" parent="对话" unique_id=28027186]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 53.0
+offset_top = -192.0
+offset_right = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "好的"
+
+[node name="角色名称" type="RichTextLabel" parent="对话" unique_id=914080125]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -235.0
+offset_right = -97.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+bbcode_enabled = true
+text = "测试名称"
+
+[node name="菜单" type="VBoxContainer" parent="对话" unique_id=549087939]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -182.0
+offset_top = -120.5
+offset_right = 182.0
+offset_bottom = 120.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+alignment = 1
+
+[node name="选项0" type="Button" parent="对话/菜单" unique_id=1837073565]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项1" type="Button" parent="对话/菜单" unique_id=2014876067]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项2" type="Button" parent="对话/菜单" unique_id=21112116]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项3" type="Button" parent="对话/菜单" unique_id=30124162]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项4" type="Button" parent="对话/菜单" unique_id=218756332]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项5" type="Button" parent="对话/菜单" unique_id=171863383]
+layout_mode = 2
+text = "cs 尝试"
+
+[node name="选项6" type="Button" parent="对话/菜单" unique_id=844619726]
+layout_mode = 2
+text = "cs 尝试"

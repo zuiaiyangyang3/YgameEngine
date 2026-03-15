@@ -4,7 +4,7 @@ extends Node
 class 放置对战 extends Node:
 	# 舞台速度
 	var 舞台速度 = 1.0 
-	
+	var 数据={} #可用于自定义数据存放
 	# 角色数据：直接用字典（不再用自定义类）
 	var 我方数据: Dictionary = {}
 	var 敌方数据: Dictionary = {}
